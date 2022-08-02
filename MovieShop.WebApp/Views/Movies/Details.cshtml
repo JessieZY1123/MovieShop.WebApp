@@ -1,0 +1,136 @@
+﻿@model MovieModel
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<div class="container" >
+  <div class="row bg-black mt-4" style="height:500px">
+    @*<img src="..." class="img-fluid" alt="...">*@
+    <div class="col-3">
+      <img src="@Model.PosterUrl" class="img-thumbnail" >
+    </div>
+
+    <div class="col-6">
+        <div class="row mt-2">
+            <h3 style="color:white;">@Model.Title @*<span class="badge bg-secondary">New</span>*@</h3>
+            <h5 style="color:white; font-size:15px; font-weight:lighter"> @Model.Tagline</h5>
+        </div>
+      
+        <div class="row">
+            <div class="col-3">
+                  @*  @foreach (var m in Model)
+                    {*@
+                        <h5 style="color: white; font-size:15px; font-weight: lighter">
+                         @Model.RunTime | @Model.ReleaseDate.ToString("d")
+                    </h5>
+                 @*   }*@
+             </div>
+             <div class="col-9">
+                 <span class="badge rounded-pill bg-secondary" >Secondary</span>
+                 <span class="badge rounded-pill bg-secondary" >Secondary</span>
+                 <span class="badge rounded-pill bg-secondary" >Secondary</span>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <span class="badge bg-success" style ="width:30px;">8.9</span>
+            </div>            
+        </div>
+        <div class="row">
+             <p class="text-sm-start font-monospace" style="color:whitesmoke" > @Model.Overview </p>
+        </div>
+    </div>
+
+    <div class="col-3 mt-3">
+        <div class="row">
+            <button type="button" class="btn btn-dark btn-outline-light col-6 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">REVIEW </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="ReviewModalLabel">Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                        <label for="Rating" class="col-form-label">Rating</label>
+                        <input type="text" class="form-control" id="Rating">
+                        </div>
+                        <div class="mb-3">
+                        <label for="Review-text" class="col-form-label">Review:</label>
+                        <textarea class="form-control" id="Review-text"></textarea>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-dark btn-outline-light col-6 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">BUY $@Model.Price</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="BuyModalLabel">BUY</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <h5>Popover in a modal</h5>
+                <p>This
+                    <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-bs-content="Popover body content is set in this attribute.">button</a> 
+                    triggers a popover on click.</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+  <div class="row mt-3 " style="height:60%">
+
+    <div class="col-4" style="background-color:#FaFafa">
+      <h5 class="md-3">Movie Facts</h5>
+      <hr style="border: 1px solid lightgray;" />
+      <ul class="list-group list-group-flush " >
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+               Release Date
+          <span class="badge bg-dark rounded-pill">@Model.ReleaseDate.ToString("MMMM dd yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo)</span>
+           </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+               Run Time
+           <span class="badge bg-dark rounded-pill">@Model.RunTime</span>
+           </li>
+         <li class="list-group-item d-flex justify-content-between align-items-center">
+             Box Office 
+         <span class="badge bg-dark rounded-pill">@Model.Revenue</span>
+         </li>
+         <li class="list-group-item d-flex justify-content-between align-items-center">
+             Budget
+         <span class="badge bg-dark rounded-pill">@Model.Budget</span>
+         </li>
+        </ul>
+    </div>
+
+
+    <div class="col-8">
+        <h5 class="md-3">CAST</h5>
+        <hr style="border: 1px solid lightgray;" />
+        <ul class="list-group list-group-flush">
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">A fourth item</li>
+              <li class="list-group-item">And a fifth one</li>
+        </ul>
+    </div>
+  </div>
+</div>

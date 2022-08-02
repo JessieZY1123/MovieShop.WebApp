@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MovieShop.ApplicationCore/1.0.0": {
+        "runtime": {
+          "MovieShop.ApplicationCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MovieShop.ApplicationCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

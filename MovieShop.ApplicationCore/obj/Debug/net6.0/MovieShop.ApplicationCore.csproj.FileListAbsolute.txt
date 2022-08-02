@@ -1,0 +1,12 @@
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\bin\Debug\net6.0\MovieShop.ApplicationCore.deps.json
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\bin\Debug\net6.0\MovieShop.ApplicationCore.dll
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\bin\Debug\net6.0\MovieShop.ApplicationCore.pdb
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.csproj.AssemblyReference.cache
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.AssemblyInfo.cs
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.dll
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\refint\MovieShop.ApplicationCore.dll
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\MovieShop.ApplicationCore.pdb
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.ApplicationCore\obj\Debug\net6.0\ref\MovieShop.ApplicationCore.dll
