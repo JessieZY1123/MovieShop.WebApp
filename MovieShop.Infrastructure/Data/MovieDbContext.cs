@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MovieShop.ApplicationCore.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MovieShop.Infrastructure.Data
 {
-    public class MovieDbContext: DbContext
+    public class MovieDbContext : IdentityDbContext<User>
     {
         public MovieDbContext(DbContextOptions<MovieDbContext> options):base(options)
         {

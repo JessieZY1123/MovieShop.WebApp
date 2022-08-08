@@ -10,7 +10,7 @@ namespace MovieShop.ApplicationCore.Entities
 {
     public class MovieCrew
     {
-        [Key]
+        public int Id { get; set; }
         public int MovieId { get; set; }
         public int CrewId { get; set; }
         [MaxLength(128)]

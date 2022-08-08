@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop.WebAppMVC", "MovieShop.WebApp\MovieShop.WebAppMVC.csproj", "{01D407FC-DEF6-46B3-837D-5476660AB9E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShop.WebAppMVC", "MovieShop.WebApp\MovieShop.WebAppMVC.csproj", "{01D407FC-DEF6-46B3-837D-5476660AB9E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop.ApplicationCore", "MovieShop.ApplicationCore\MovieShop.ApplicationCore.csproj", "{8B7AA7C0-C49D-4649-83B2-CC8D0097BCDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShop.ApplicationCore", "MovieShop.ApplicationCore\MovieShop.ApplicationCore.csproj", "{8B7AA7C0-C49D-4649-83B2-CC8D0097BCDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop.Infrastructure", "MovieShop.Infrastructure\MovieShop.Infrastructure.csproj", "{CD1B26BB-E0E3-41C9-8C19-CCDA596D4E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShop.Infrastructure", "MovieShop.Infrastructure\MovieShop.Infrastructure.csproj", "{CD1B26BB-E0E3-41C9-8C19-CCDA596D4E75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopAPI", "MovieShopAPI\MovieShopAPI.csproj", "{CC1518B8-53A3-4B81-80B5-2523181F8EE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CD1B26BB-E0E3-41C9-8C19-CCDA596D4E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD1B26BB-E0E3-41C9-8C19-CCDA596D4E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD1B26BB-E0E3-41C9-8C19-CCDA596D4E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1518B8-53A3-4B81-80B5-2523181F8EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1518B8-53A3-4B81-80B5-2523181F8EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1518B8-53A3-4B81-80B5-2523181F8EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1518B8-53A3-4B81-80B5-2523181F8EE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

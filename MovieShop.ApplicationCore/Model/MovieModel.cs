@@ -14,12 +14,15 @@ namespace MovieShop.ApplicationCore.Model
 
         [MaxLength(256)]
         [Column(TypeName = "Varchar")]
+        [Required]
         public string Title { get; set; }
         [Column(TypeName = "Varchar")]
+        [Required]
         public string Overview { get; set; }
 
         [MaxLength(512)]
         [Column(TypeName = "Varchar")]
+        [Required]
         public string Tagline { get; set; }
         public decimal Budget { get; set; }
         public decimal Revenue { get; set; }
@@ -46,5 +49,7 @@ namespace MovieShop.ApplicationCore.Model
         public DateTime? UpdatedDate { get; set; }
         public string? UpdatedBy { get; set; }
         public string? CreatedBy { get; set; }
+        public IEnumerable<CastModel> Casts { get; set; }
+        public IEnumerable<GenreModel> Genres { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace MovieShop.ApplicationCore.Model
         public int Id { get; set; }
         [MaxLength(128)]
         [Column(TypeName ="varchar")]
+        [Required]
         public string Name { get; set; }
         [Column(TypeName = "varchar")]
         public string Gender { get; set; }

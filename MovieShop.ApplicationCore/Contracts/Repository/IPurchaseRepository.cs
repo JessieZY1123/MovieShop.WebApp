@@ -1,6 +1,8 @@
-﻿namespace MovieShop.ApplicationCore.Contracts.Repository
+﻿using MovieShop.ApplicationCore.Entities;
+
+namespace MovieShop.ApplicationCore.Contracts.Repository
 {
-    internal interface IPurchaseRepository
+    public interface IPurchaseRepository: IRepository<Purchase> 
     {
     }
 }

@@ -24,21 +24,31 @@ namespace MovieShop.Infrastructure.Service
                     Title = entity.Title,
                     Overview = entity.Overview,
                     Tagline = entity.Tagline,
-                    Budget = entity.Budget,
-                    Revenue = entity.Revenue,
+                    Budget = (decimal)entity.Budget,
+                    Revenue = (decimal)entity.Revenue,
                     ImdbUrl = entity.ImdbUrl,
                     TmdbUrl = entity.TmdbUrl,
                     PosterUrl = entity.PosterUrl,
                     BackdropUrl = entity.BackdropUrl,
                     OriginalLanguage= entity.OriginalLanguage,
                     ReleaseDate = entity.ReleaseDate,
-                    RunTime = entity.RunTime,
+                    RunTime = (int)entity.RunTime,
                     Price = entity.Price
                 };
                 return MoiveDetails;
             }
             return null;
 
+        }
+
+        public Task<IEnumerable<MovieCardModel>> GetMoviesByGenre(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<MovieCardModel>> GetMoviesCast(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

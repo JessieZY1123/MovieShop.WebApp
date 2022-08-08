@@ -13,13 +13,14 @@ namespace MovieShop.ApplicationCore.Entities
         public int Id { get; set; }
 
         [MaxLength(256)]
+        [Required]
         public string Title { get; set; }
         public string Overview { get; set; }
 
         [MaxLength(512)]
         public string Tagline { get; set; }
-        public decimal Budget { get; set; }
-        public decimal Revenue { get; set; }
+        public decimal? Budget { get; set; }
+        public decimal? Revenue { get; set; }
 
         [MaxLength(2084)]
         public string ImdbUrl { get; set; }
@@ -32,7 +33,7 @@ namespace MovieShop.ApplicationCore.Entities
         [MaxLength(64)]
         public string OriginalLanguage { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public int RunTime { get; set; }
+        public int? RunTime { get; set; }
         public decimal? Price { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace MovieShop.ApplicationCore.Contracts.Repository
 {
-    internal interface IReportRepository
+    public interface IReportRepository
     {
     }
 }

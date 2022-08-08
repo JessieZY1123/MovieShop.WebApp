@@ -1,6 +1,11 @@
-﻿namespace MovieShop.ApplicationCore.Contracts.Services
+﻿using Microsoft.AspNetCore.Identity;
+using MovieShop.ApplicationCore.Model;
+
+namespace MovieShop.ApplicationCore.Contracts.Services
 {
-    internal interface IAccountService
+    public interface IAccountService
     {
+        Task<IdentityResult> SignUpAsync(SignUpModel model);
+        Task<SignInResult> LoginAsync(SignInModel model);
     }
 }

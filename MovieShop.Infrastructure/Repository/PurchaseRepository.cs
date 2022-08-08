@@ -1,6 +1,13 @@
-﻿namespace MovieShop.Infrastructure.Repository
+﻿using MovieShop.ApplicationCore.Contracts.Repository;
+using MovieShop.ApplicationCore.Entities;
+using MovieShop.Infrastructure.Data;
+
+namespace MovieShop.Infrastructure.Repository
 {
-    internal class PurchaseRepository
+    public class PurchaseRepository : BaseRepository<Purchase>, IPurchaseRepository
     {
+        public PurchaseRepository(MovieDbContext _context) : base(_context)
+        {
+        }
     }
 }

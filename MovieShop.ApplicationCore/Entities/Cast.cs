@@ -12,7 +12,9 @@ namespace MovieShop.ApplicationCore.Entities
     {
         public int Id { get; set; }
         [MaxLength(128)]
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Gender { get; set; }
         public string TmdbUrl { get; set; }
         [MaxLength(2084)]

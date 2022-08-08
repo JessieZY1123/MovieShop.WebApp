@@ -1,6 +1,12 @@
-﻿namespace MovieShop.ApplicationCore.Contracts.Repository
+﻿using Microsoft.AspNetCore.Identity;
+using MovieShop.ApplicationCore.Entities;
+using MovieShop.ApplicationCore.Model;
+
+namespace MovieShop.ApplicationCore.Contracts.Repository
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
+        Task<IdentityResult> SignUpAsync(SignUpModel user);
+        Task<SignInResult> LoginAsync(SignInModel model);
     }
 }

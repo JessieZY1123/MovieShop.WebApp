@@ -14,7 +14,7 @@ namespace MovieShop.Infrastructure.Service
 
         public async Task<CastModel> GetCastDetail(int id)
         {
-            var CastDetails = await castRepository.GetById(id);
+            var CastDetails = await castRepository.GetByIdAsync(id);
             
             var castModel = new CastModel
             {

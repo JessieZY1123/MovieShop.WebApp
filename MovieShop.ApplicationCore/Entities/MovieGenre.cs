@@ -10,7 +10,7 @@ namespace MovieShop.ApplicationCore.Entities
 {
     public class MovieGenre
     {
-        [Key]
+        public int Id { get; set; }
         public int MovieId { get; set; }
 
         public int GenreId { get; set; }

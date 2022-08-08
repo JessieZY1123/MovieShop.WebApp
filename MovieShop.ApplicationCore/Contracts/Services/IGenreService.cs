@@ -1,6 +1,9 @@
-﻿namespace MovieShop.ApplicationCore.Contracts.Services
+﻿using MovieShop.ApplicationCore.Model;
+
+namespace MovieShop.ApplicationCore.Contracts.Services
 {
-    internal interface IGenreService
+    public interface IGenreService
     {
+        Task<IEnumerable<GenreModel>> GetAllGenres();
     }
 }
