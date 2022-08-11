@@ -68,3 +68,4 @@ C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.WebApp\bin\Debug\net6.0\M
 C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.WebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.WebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.WebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\hutud\source\repos\MovieShop.WebApp\MovieShop.WebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

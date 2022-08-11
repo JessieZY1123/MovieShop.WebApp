@@ -50,5 +50,23 @@ namespace MovieShop.Infrastructure.Service
         {
             throw new NotImplementedException();
         }
+
+        public async Task<List<MovieCardModel>> GetTop30Movies()
+        {
+            var result = await moiveRepository.GetTop30Movies();
+            var movieCard = new List<MovieCardModel>();
+            if (result != null) {
+                foreach (var item in result) 
+                {
+                    MovieCardModel mc = new MovieCardModel();
+                    mc.Id = item.Id;
+                    mc.Title = item.Title;
+                    mc.PosterUrl = item.PosterUrl;
+                    mc.ReleaseDate = item.ReleaseDate;
+                    movieCard.Add(mc);
+                }
+            }
+            return movieCard;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieShop.ApplicationCore.Contracts.Services;
 using MovieShop.WebApp.Models;
 using System.Diagnostics;
 
@@ -7,15 +8,19 @@ namespace MovieShop.WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMovieService movieService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMovieService _movieService)
         {
             _logger = logger;
+            movieService = _movieService;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var movieCards = await movieService.GetTop30Movies();
+            return View(movieCards);
         }
 
         public IActionResult Privacy()

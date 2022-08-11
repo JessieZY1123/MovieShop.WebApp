@@ -15,6 +15,8 @@ namespace MovieShop.ApplicationCore.Model
         public string Title { get; set; }
         [Column(TypeName = "Varchar")]
         public string PosterUrl { get; set; }
-        
+        public DateTime ReleaseDate { get; set; }
+
+
     }
 }

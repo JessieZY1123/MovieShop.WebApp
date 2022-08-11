@@ -15,6 +15,8 @@ namespace MovieShop.Infrastructure.Repository
         }
 
 
+
+
         public async Task<IEnumerable<Movie>> GetMoviesCast()
         {
             var movies = await movieContext.Movie.Include(m => m.MovieCasts).ToListAsync();
@@ -41,6 +43,19 @@ namespace MovieShop.Infrastructure.Repository
            
             throw new Exception("No Movies Found for that genre");
 
+        }
+
+        public async Task<List<Movie>> GetTop30Movies()
+        {
+            // call the database with EF Core and get the data
+            // use MovieShopDbContext and Movies DbSet
+            // select top 30 * from Movies order by Revenue
+            // corresponding LINQ Query
+
+            var movies = await movieContext.Movie.OrderByDescending(m => m.Revenue)
+                .Select(m => new Movie { Id = m.Id, Title = m.Title, PosterUrl = m.PosterUrl, ReleaseDate = m.ReleaseDate })
+                .Take(30).ToListAsync();
+            return movies;
         }
     }
 }
