@@ -10,7 +10,6 @@ using System.Text;
 
 namespace MovieShopAPI.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
@@ -43,6 +42,9 @@ namespace MovieShopAPI.Controllers
                 return BadRequest(sb.ToString());
             }
         }
+
+        [HttpPost]
+        [Route("SignIn")]
         public async Task<IActionResult> login(SignInModel model)
         {
             var result = await accountService.LoginAsync(model);

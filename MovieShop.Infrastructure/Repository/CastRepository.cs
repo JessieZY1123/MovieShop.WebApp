@@ -7,16 +7,19 @@ namespace MovieShop.Infrastructure.Repository
 {
     public class CastRepository : BaseRepository<Cast>, ICastRepository
     {
-        //MovieDbContext Castdb;
+        private readonly MovieDbContext castContext;
         public CastRepository(MovieDbContext _context) : base(_context)
         {
-            //Castdb = _context;
+            castContext = _context;
         }
 
-        //public async Task<Cast> GetById(int id)
-        //{
-        //    var cast = await Castdb.Cast.Where(x => x.Id == id).FirstOrDefaultAsync();
-        //    return cast;
-        //}
+        public async Task<Cast> GetByIdAsync(int id)
+        {
+            var cast = await castContext.Cast
+                .Include(c => c.MovieCasts)
+                .ThenInclude(c => c.Movies)
+                .FirstOrDefaultAsync(c => c.Id == id);
+            return cast;
+        }
     }
 }

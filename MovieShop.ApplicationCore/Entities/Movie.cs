@@ -49,9 +49,9 @@ namespace MovieShop.ApplicationCore.Entities
         public ICollection<Review> Reviews { get; set; }
         public ICollection<Purchase> Purchases { get; set; }    
         public ICollection<Trailer> Trailers { get; set; }
-        public ICollection<Genre> Genres { get; set; }
+        public ICollection<MovieGenre> MovieGenres { get; set; }
 
-        
-       
+
+
     }
 }

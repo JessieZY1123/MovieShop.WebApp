@@ -251,17 +251,12 @@ namespace MovieShop.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
 
                     b.ToTable("Genre");
                 });
@@ -533,14 +528,14 @@ namespace MovieShop.Infrastructure.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AccessFailedCount")
+                    b.Property<int?>("AccessFailedCount")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -555,10 +550,10 @@ namespace MovieShop.Infrastructure.Migrations
                         .HasMaxLength(128)
                         .HasColumnType("nvarchar(128)");
 
-                    b.Property<bool>("IsLocked")
+                    b.Property<bool?>("IsLocked")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("LastLoginDateTime")
+                    b.Property<DateTime?>("LastLoginDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
@@ -572,7 +567,7 @@ namespace MovieShop.Infrastructure.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<DateTime>("LockoutEndDate")
+                    b.Property<DateTime?>("LockoutEndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NormalizedEmail")
@@ -593,11 +588,9 @@ namespace MovieShop.Infrastructure.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ProfilePictureUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Salt")
-                        .IsRequired()
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
@@ -692,13 +685,6 @@ namespace MovieShop.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MovieShop.ApplicationCore.Entities.Genre", b =>
-                {
-                    b.HasOne("MovieShop.ApplicationCore.Entities.Movie", null)
-                        .WithMany("Genres")
-                        .HasForeignKey("MovieId");
-                });
-
             modelBuilder.Entity("MovieShop.ApplicationCore.Entities.MovieCast", b =>
                 {
                     b.HasOne("MovieShop.ApplicationCore.Entities.Cast", "Casts")
@@ -750,7 +736,7 @@ namespace MovieShop.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("MovieShop.ApplicationCore.Entities.Movie", "Movie")
-                        .WithMany()
+                        .WithMany("MovieGenres")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -824,11 +810,11 @@ namespace MovieShop.Infrastructure.Migrations
                 {
                     b.Navigation("Favorites");
 
-                    b.Navigation("Genres");
-
                     b.Navigation("MovieCasts");
 
                     b.Navigation("MovieCrews");
+
+                    b.Navigation("MovieGenres");
 
                     b.Navigation("Purchases");
 

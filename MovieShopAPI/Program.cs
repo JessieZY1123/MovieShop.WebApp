@@ -17,6 +17,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+
+builder.Services.AddScoped<ICastService, CastService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+
+
+
+
 builder.Services.AddSqlServer<MovieDbContext>(builder.Configuration.GetConnectionString("MovieShopDb"));
 
 builder.Services.AddIdentity<User, IdentityRole>()
@@ -52,14 +66,6 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-builder.Services.AddScoped<IMovieRepository, MovieRepository>();
-builder.Services.AddScoped<ICastRepository, CastRepository>();
-builder.Services.AddScoped<IUserRepository,UserRepository>();
-
-
-builder.Services.AddScoped<ICastService, CastService>();
-builder.Services.AddScoped<IMovieService, MovieService>();
-builder.Services.AddScoped<IAccountService, AccountService>();
 
 
 var app = builder.Build();

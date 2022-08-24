@@ -15,6 +15,7 @@ namespace MovieShop.Infrastructure.Service
         public async Task<MovieModel> GetMovieDetailsAsync(int id)
         {
             var entity = await moiveRepository.GetByIdAsync(id);
+     
 
             if (entity != null)
             {
@@ -35,6 +36,34 @@ namespace MovieShop.Infrastructure.Service
                     RunTime = (int)entity.RunTime,
                     Price = entity.Price
                 };
+
+                //MoiveDetails.Trailers = new List<TrailerModel>();
+
+
+                //foreach (var trailer in entity.Trailers)
+                //{
+                //    MoiveDetails.Trailers.Add(new TrailerModel
+                //    {
+                //        Name = trailer.Name,
+                //        TrailerUrl = trailer.TrailerUrl
+                //    });
+                //}
+
+                MoiveDetails.Casts = new List<CastModel>();
+
+                foreach (var cast in entity.MovieCasts)
+                {
+                    MoiveDetails.Casts.Add(new CastModel
+                    {
+                        Id = cast.CastId,
+                        Name = cast.Casts.Name,
+                        Character = cast.Character,
+                        ProfilePath = cast.Casts.ProfilePath
+                    });
+                }
+
+
+
                 return MoiveDetails;
             }
             return null;

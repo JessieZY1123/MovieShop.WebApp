@@ -49,7 +49,8 @@ namespace MovieShop.ApplicationCore.Model
         public DateTime? UpdatedDate { get; set; }
         public string? UpdatedBy { get; set; }
         public string? CreatedBy { get; set; }
-        public IEnumerable<CastModel> Casts { get; set; }
-        public IEnumerable<GenreModel> Genres { get; set; }
+        public List<CastModel> Casts { get; set; }
+        public List<GenreModel> Genres { get; set; }
+        public List<TrailerModel> Trailers { get; set; }
     }
 }

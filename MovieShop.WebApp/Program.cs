@@ -51,10 +51,12 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
 builder.Services.AddScoped<ICastService, CastService>();
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 
 var app = builder.Build();
@@ -72,6 +74,8 @@ app.UseStaticFiles();
 
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

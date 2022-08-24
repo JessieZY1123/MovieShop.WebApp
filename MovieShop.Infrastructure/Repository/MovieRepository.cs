@@ -8,15 +8,21 @@ namespace MovieShop.Infrastructure.Repository
 {
     public class MovieRepository : BaseRepository<Movie>, IMovieRepository
     {
-        MovieDbContext movieContext;
+        private readonly MovieDbContext movieContext;
         public MovieRepository(MovieDbContext _context) : base(_context)
         {
             movieContext = _context;
         }
 
-
-
-
+        public async Task<Movie> GetByIdAsync(int id)
+        {
+            var movieDetails = await movieContext.Movie
+                .Include(m => m.MovieGenres).ThenInclude(m => m.Genre)
+                .Include(m => m.Trailers)
+                .Include(m => m.MovieCasts).ThenInclude(m => m.Casts)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            return movieDetails;
+        }
         public async Task<IEnumerable<Movie>> GetMoviesCast()
         {
             var movies = await movieContext.Movie.Include(m => m.MovieCasts).ToListAsync();
@@ -52,7 +58,7 @@ namespace MovieShop.Infrastructure.Repository
             // select top 30 * from Movies order by Revenue
             // corresponding LINQ Query
 
-            var movies = await movieContext.Movie.OrderByDescending(m => m.Revenue)
+            var movies = await movieContext.Movie
                 .Select(m => new Movie { Id = m.Id, Title = m.Title, PosterUrl = m.PosterUrl, ReleaseDate = m.ReleaseDate })
                 .Take(30).ToListAsync();
             return movies;

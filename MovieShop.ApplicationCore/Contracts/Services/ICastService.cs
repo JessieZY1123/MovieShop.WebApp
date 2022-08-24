@@ -4,6 +4,6 @@ namespace MovieShop.ApplicationCore.Contracts.Services
 {
     public interface ICastService
     {
-        Task<CastModel> GetCastDetail(int id);
+        Task<CastDetailsModel> GetCastDetail(int id);
     }
 }

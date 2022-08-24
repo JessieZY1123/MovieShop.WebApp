@@ -17,15 +17,15 @@ namespace MovieShop.ApplicationCore.Entities
         [MaxLength(128)]
         [Required]
         public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         [MaxLength(1024)]
-        public string Salt { get; set; } 
-        public DateTime LockoutEndDate { get; set; }
-        public DateTime LastLoginDateTime { get; set; }
-        public bool IsLocked { get; set; }
-        public int AccessFailedCount { get; set; }
-        public string ProfilePictureUrl { get; set; }
+        public string? Salt { get; set; } 
+        public DateTime? LockoutEndDate { get; set; }
+        public DateTime? LastLoginDateTime { get; set; }
+        public bool? IsLocked { get; set; }
+        public int? AccessFailedCount { get; set; }
+        public string? ProfilePictureUrl { get; set; }
 
         //public ICollection<UserRole> UserRoles { get; set; }
         public ICollection<Purchase> Purchases { get; set; }

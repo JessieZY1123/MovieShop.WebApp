@@ -69,8 +69,20 @@
         </div>
         </div>
         <div class="row">
-            <button type="button" class="btn btn-dark btn-outline-light col-6 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">BUY $@Model.Price</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                @if (Model.Price == null)
+                {
+                    <button type="button" class="btn btn-dark btn-outline-light col-6 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        BUY $ 9.99
+                    </button>
+                }
+                else
+                {
+                    <button type="button" class="btn btn-dark btn-outline-light col-6 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        BUY $ @Model.Price
+                    </button>
+                
+                }
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -123,10 +135,21 @@
         <h5 class="md-3">CAST</h5>
         <hr style="border: 1px solid lightgray;" />
         <ul class="list-group list-group-flush">
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-              <li class="list-group-item">A fourth item</li>
-              <li class="list-group-item">And a fifth one</li>
+             @foreach(var c in Model.Casts){
+                <li class="list-group-item">
+				    <div style="float:left; width:10%">
+					    <a asp-controller="Cast" asp-action="CastDetails" asp-route-id="@c.Id">
+						    <img src="@c.ProfilePath" alt="@c.Name" class="rounded-circle" style="width:50%">
+					    </a>
+				    </div>
+				    <div style="float:left; width:50%">
+					    @c.Name
+				    </div>
+				    <div style="float:left; width:40%">
+					    @c.Character
+				    </div>
+			    </li>
+             }
         </ul>
     </div>
   </div>

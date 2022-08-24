@@ -15,10 +15,11 @@ namespace MovieShop.WebApp.Controllers
             return View();
         }
 
-        public async Task<ActionResult> Detail(int id)
+        [HttpGet]
+        public async Task<ActionResult> CastDetails(int id)
         {
 
-            var cast = await this.castService.GetCastDetail(id)
+            var cast = await castService.GetCastDetail(id)
 ;
             return View(cast);
         }
